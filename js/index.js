@@ -20,6 +20,14 @@ const clickHambarger = (e) => {
     switchHambergerMenuModal()
 }
 
+/**
+ * モーダルの背景を選択
+ * @param {*} e
+ */
+const clickModalLayer = (e) => {
+    switchHambergerMenuModal()
+}
+
 /** イベント一覧 */
 
 /**
@@ -29,6 +37,9 @@ const clickHambarger = (e) => {
 const domContentLoaded = (e) => {
     const hambarger = document.querySelector('.hambarger-icon')
     hambarger.addEventListener('click', clickHambarger)
+
+    const modal_layer = document.querySelector('.modal-layer')
+    modal_layer.addEventListener('click', clickModalLayer)
 }
 
 document.addEventListener('DOMContentLoaded', domContentLoaded)
