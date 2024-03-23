@@ -6,6 +6,21 @@ img {
 
 body {
     font-family: "Meiryo UI", "Meiryo";
+
+    // ハンバーガーメニューのモーダルオープン時（書き方が分からん）
+    &.hambarger-open {
+        .hambarger-icon {
+            div {
+                &:nth-child(1) {
+                    transform: translateY(5.5px) rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    transform: translateY(-5.5px) rotate(-45deg);
+                }
+            }
+        }
+    }
 }
 
 .header {
@@ -38,21 +53,6 @@ body {
             &:nth-child(2) {
                 height: 2px;
                 background-color: #333333;
-            }
-        }
-    }
-
-    // ハンバーガーメニューのモーダルオープン時（書き方が分からん）
-    &.hambarger-open {
-        .hambarger-icon {
-            div {
-                &:nth-child(1) {
-                    transform: translateY(5.5px) rotate(45deg);
-                }
-
-                &:nth-child(2) {
-                    transform: translateY(-5.5px) rotate(-45deg);
-                }
             }
         }
     }

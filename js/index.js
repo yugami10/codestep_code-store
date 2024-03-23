@@ -4,11 +4,11 @@
  * ハンバーガーメニューをクリック時のモーダル切替
  */
 const switchHambergerMenuModal = () => {
-    const header = document.querySelector('header')
-    if (header.classList.contains('hambarger-open')) {
-        header.classList.remove('hambarger-open')
+    const body = document.querySelector('body')
+    if (body.classList.contains('hambarger-open')) {
+        body.classList.remove('hambarger-open')
     } else {
-        header.classList.add('hambarger-open')
+        body.classList.add('hambarger-open')
     }
 }
 
