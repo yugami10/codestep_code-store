@@ -1,0 +1,61 @@
+// common
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: "Meiryo UI", "Meiryo";
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 32px 40px 0;
+
+    .logo {
+        width: 180px;
+    }
+
+    .hambarger-icon {
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 9px;
+        cursor: pointer;
+
+        div {
+            transition: all 0.5s;
+
+            &:nth-child(1) {
+                width: 30px;
+                height: 2px;
+                background-color: #333333;
+            }
+
+            &:nth-child(2) {
+                width: 30px;
+                height: 2px;
+                background-color: #333333;
+            }
+        }
+    }
+
+    // ハンバーガーメニューのモーダルオープン時（書き方が分からん）
+    &.hambarger-open {
+        .hambarger-icon {
+            div {
+                &:nth-child(1) {
+                    transform: translateY(5.5px) rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    transform: translateY(-5.5px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
