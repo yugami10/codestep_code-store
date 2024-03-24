@@ -1,0 +1,32 @@
+@use "variable" as v;
+
+footer {
+    @include v.app_size;
+    margin-top: 60px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+
+    @include v.mq(sp) {
+        justify-content: initial;
+        flex-direction: column;
+    }
+
+    .sns {
+        ul {
+            display: flex;
+
+            li:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .copy_right {
+        font-size: 10px;
+
+        @include v.mq(sp) {
+            margin-top: 10px;
+        }
+    }
+}

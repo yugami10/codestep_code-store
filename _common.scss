@@ -1,0 +1,38 @@
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: "Meiryo UI", "Meiryo";
+    font-size: 12px;
+    position: relative;
+
+    // ハンバーガーメニューのモーダルオープン時（bodyに書くしか方法が分からん）
+    &.hambarger-open {
+        .hambarger-icon {
+            div {
+                &:nth-child(1) {
+                    transform: translateY(5.5px) rotate(45deg);
+                    background-color: #fff;
+                    z-index: 1;
+                }
+
+                &:nth-child(2) {
+                    transform: translateY(-5.5px) rotate(-45deg);
+                    background-color: #fff;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .modal-layer {
+            display: block;
+        }
+
+        .hambarger-modal {
+            opacity: 1;
+            left: 0;
+        }
+    }
+}
