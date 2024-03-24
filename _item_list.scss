@@ -2,7 +2,6 @@
 
 .item_list {
     @include v.app_size;
-    margin-top: 31px;
 
     ul {
         display: flex;

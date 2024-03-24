@@ -10,6 +10,10 @@ body {
 
     // ハンバーガーメニューのモーダルオープン時（bodyに書くしか方法が分からん）
     &.hambarger-open {
+        .header {
+            z-index: initial;
+        }
+
         .hambarger-icon {
             div {
                 &:nth-child(1) {
