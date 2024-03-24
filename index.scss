@@ -147,3 +147,25 @@ body {
         text-align: center;
     }
 }
+
+footer {
+    @include app_size;
+    margin-top: 60px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+
+    .sns {
+        ul {
+            display: flex;
+
+            li:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .copy_right {
+        font-size: 10px;
+    }
+}
