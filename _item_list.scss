@@ -3,7 +3,7 @@
 .item_list {
     @include v.app_size;
 
-    ul {
+    &__area {
         display: flex;
         flex-wrap: wrap;
         column-gap: calc((100% - (21% * 4)) / 3);
@@ -11,33 +11,35 @@
             column-gap: calc((100% - (47% * 2)) / 1);
         }
 
-        li {
-            max-width: 295px;
-            width: 21%;
+    }
 
-            @include v.mq(sp) {
-                width: 47%;
-                max-width: initial;
+    &__detail {
+        max-width: 295px;
+        width: 21%;
 
-                &:nth-child(n+3) {
-                    margin-top: 40px;
-                }
+        @include v.mq(sp) {
+            width: 47%;
+            max-width: initial;
+
+            &:nth-child(n+3) {
+                margin-top: 40px;
             }
+        }
 
-            @include v.mq(pc) {
-                &:nth-child(n+5) {
-                    margin-top: 42px;
-                }
+        @include v.mq(pc) {
+            &:nth-child(n+5) {
+                margin-top: 42px;
             }
+        }
 
-            a {
-                transition: all .5s;
-                &:hover {
-                    opacity: 0.7;
-                }
+        a {
+            transition: all .5s;
+            &:hover {
+                opacity: 0.7;
             }
         }
     }
+
     &__detail_explain {
         margin-top: 13px;
         p {
@@ -49,5 +51,15 @@
     .view_more_area {
         margin-top: 40px;
         text-align: center;
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 46px;
+
+        li:not(:last-child) {
+            margin-right: 40px;
+        }
     }
 }

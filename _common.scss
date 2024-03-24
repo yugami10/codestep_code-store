@@ -4,9 +4,10 @@ img {
 }
 
 body {
-    font-family: "Meiryo UI", "Meiryo";
+    font-family: "Meiryo";
     font-size: 12px;
     position: relative;
+    line-height: initial;
 
     // ハンバーガーメニューのモーダルオープン時（bodyに書くしか方法が分からん）
     &.hambarger-open {
