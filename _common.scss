@@ -1,3 +1,5 @@
+@use "variable" as v;
+
 img {
     width: 100%;
     object-fit: cover;
@@ -38,6 +40,15 @@ body {
         .hambarger-modal {
             opacity: 1;
             left: 0;
+        }
+    }
+
+    .wrapper {
+        @include v.app_size;
+        font-size: 14px;
+
+        h1 {
+            margin: 33px 0;
         }
     }
 }

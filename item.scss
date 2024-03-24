@@ -3,19 +3,12 @@
 @use "footer";
 @use "variable" as v;
 
-.item_wrapper {
-    @include v.app_size;
-    font-size: 14px;
-
-    h1 {
-        margin: 33px 0;
-    }
-}
-
 .item {
-    display: flex;
-    @include v.mq(sp) {
-        flex-direction: column;
+    &__area {
+        display: flex;
+        @include v.mq(sp) {
+            flex-direction: column;
+        }
     }
 
     &__img_area {

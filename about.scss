@@ -1,16 +1,6 @@
 @use "common";
 @use "header";
 @use "footer";
-@use "variable" as v;
-
-.wrapper {
-    @include v.app_size;
-    font-size: 14px;
-
-    h1 {
-        margin: 33px 0;
-    }
-}
 
 .about {
     &__text_area {
