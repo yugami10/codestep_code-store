@@ -2,3 +2,9 @@
 @use "header";
 @use "footer";
 @use "item_list";
+
+.item_list {
+    h1 {
+        margin: 33px 0;
+    }
+}
