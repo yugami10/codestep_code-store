@@ -14,14 +14,27 @@
 
 .item {
     display: flex;
+    @include v.mq(sp) {
+        flex-direction: column;
+    }
 
     &__img_area {
         width: 400px;
         margin-right: 64px;
+
+        @include v.mq(sp) {
+            width: 100%;
+            margin: 0;
+        }
     }
 
     &__text_area {
         width: 330px;
+
+        @include v.mq(sp) {
+            width: 100%;
+            margin-top: 33px;
+        }
 
         p {
             &:not(:first-child) {
