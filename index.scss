@@ -1,3 +1,10 @@
+// へんすう
+@mixin app_size {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 // common
 img {
     width: 100%;
@@ -6,6 +13,7 @@ img {
 
 body {
     font-family: "Meiryo UI", "Meiryo";
+    font-size: 12px;
     position: relative;
 
     // ハンバーガーメニューのモーダルオープン時（書き方が分からん）
@@ -38,12 +46,11 @@ body {
 }
 
 .header {
+    @include app_size;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1360px;
-    margin: 0 auto;
-    padding: 32px 40px 0;
+    margin-top: 32px;
 
     .logo {
         width: 180px;
@@ -100,4 +107,39 @@ body {
     top: 0;
     background-color: #000;
     opacity: 0.8;
+}
+
+.item_list {
+    @include app_size;
+    margin-top: 31px;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: calc((100% - (21% * 4)) / 3);
+
+        li {
+            max-width: 295px;
+            width: 21%;
+
+            &:nth-child(n+5) {
+                margin-top: 42px;
+            }
+
+            a {
+                transition: all .5s;
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+    &__detail_explain {
+        margin-top: 13px;
+        p {
+            &:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+    }
 }
