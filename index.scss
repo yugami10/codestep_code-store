@@ -1,0 +1,206 @@
+// map
+$breakpoint: (
+    sp: 'screen and (max-width: 900px)',
+    pc: 'screen and (min-width: 900px)'
+);
+
+// へんすう
+@mixin mq($bq) {
+    @media #{map-get($breakpoint, $bq)} {
+        @content;
+    }
+}
+
+@mixin app_size {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+// common
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: "Meiryo UI", "Meiryo";
+    font-size: 12px;
+    position: relative;
+
+    // ハンバーガーメニューのモーダルオープン時（書き方が分からん）
+    &.hambarger-open {
+        .hambarger-icon {
+            div {
+                &:nth-child(1) {
+                    transform: translateY(5.5px) rotate(45deg);
+                    background-color: #fff;
+                    z-index: 1;
+                }
+
+                &:nth-child(2) {
+                    transform: translateY(-5.5px) rotate(-45deg);
+                    background-color: #fff;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .modal-layer {
+            display: block;
+        }
+
+        .hambarger-modal {
+            opacity: 1;
+            left: 0;
+        }
+    }
+}
+
+.header {
+    @include app_size;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+
+    .logo {
+        width: 180px;
+    }
+
+    .hambarger-icon {
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 9px;
+        cursor: pointer;
+
+        div {
+            transition: all 0.5s;
+
+            &:nth-child(1) {
+                height: 2px;
+                background-color: #333333;
+            }
+
+            &:nth-child(2) {
+                height: 2px;
+                background-color: #333333;
+            }
+        }
+    }
+}
+
+.hambarger-modal {
+    opacity: 0;
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    padding: 36px 50px;
+    transition: all 0.5s;
+
+    ul {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 14px;
+            }
+        }
+    }
+}
+
+.modal-layer {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #000;
+    opacity: 0.8;
+}
+
+.item_list {
+    @include app_size;
+    margin-top: 31px;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: calc((100% - (21% * 4)) / 3);
+        @include mq(sp) {
+            column-gap: calc((100% - (47% * 2)) / 1);
+        }
+
+        li {
+            max-width: 295px;
+            width: 21%;
+
+            @include mq(sp) {
+                width: 47%;
+                max-width: initial;
+
+                &:nth-child(n+3) {
+                    margin-top: 40px;
+                }
+            }
+
+            @include mq(pc) {
+                &:nth-child(n+5) {
+                    margin-top: 42px;
+                }
+            }
+
+            a {
+                transition: all .5s;
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+    &__detail_explain {
+        margin-top: 13px;
+        p {
+            &:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+    }
+    .view_more_area {
+        margin-top: 40px;
+        text-align: center;
+    }
+}
+
+footer {
+    @include app_size;
+    margin-top: 60px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(sp) {
+        justify-content: initial;
+        flex-direction: column;
+    }
+
+    .sns {
+        ul {
+            display: flex;
+
+            li:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .copy_right {
+        font-size: 10px;
+
+        @include mq(sp) {
+            margin-top: 10px;
+        }
+    }
+}
