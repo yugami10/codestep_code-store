@@ -51,6 +51,8 @@
         height: 300px;
         filter: grayscale(1);
         margin-top: 22px;
+        position: relative;
+        z-index: -1;
 
         iframe {
             width: 100%;
